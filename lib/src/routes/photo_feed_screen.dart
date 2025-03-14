@@ -1,0 +1,120 @@
+import 'package:filore/src/core/providers/photo_provider.dart';
+import 'package:filore/src/core/providers/user_provider.dart';
+import 'package:filore/src/utils/constants/colors.dart';
+import 'package:filore/src/utils/constants/icons.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
+
+class PhotoFeedScreen extends ConsumerWidget {
+  const PhotoFeedScreen({super.key});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final user = ref.watch(userProvider);
+
+    return Scaffold(
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15.0),
+          child: Column(
+            children: [
+              // Filore logo centered at the top
+              Align(
+                alignment: Alignment.center,
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 10.0, bottom: 10.0),
+                  child: SvgPicture.asset(
+                    isDark ? filoreIconDark : filoreIcon,
+                    height: 36,
+                    width: 36,
+                  ),
+                ),
+              ),
+              if (user?.following == null || user!.following.isEmpty)
+                //
+                Expanded(
+                  child: Center(
+                      child: Text(
+                          'You need to follow photographers to display posts',
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyMedium
+                              ?.copyWith(color: isDark ? white : black))),
+                )
+              else
+                // Photo feed
+                Expanded(
+                  child: ListView.builder(
+                    padding: const EdgeInsets.only(bottom: 100),
+                    itemCount: user.following
+                            .expand((follower) => follower.photos)
+                            .length ??
+                        0,
+                    itemBuilder: (context, index) {
+                      final photo = user.following
+                          .expand((followers) => followers.photos)
+                          .toList()[index];
+
+                      return Padding(
+                        padding: const EdgeInsets.only(bottom: 30.0),
+                        child: GestureDetector(
+                          onTap: () {
+                            ref.read(selectedPhotoProvider.notifier).state =
+                                photo;
+                            context.go('/photo_detail',
+                                extra: {'photo': photo, 'user': user});
+                          },
+                          child: Column(
+                            children: [
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(10),
+                                child: Image.network(
+                                  photo.photoUrl,
+                                  fit: BoxFit.cover,
+                                  width: double.infinity,
+                                ),
+                              ),
+                              const SizedBox(height: 10),
+                              //photo reaction buttons
+
+                              Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 20.0),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  spacing: 2,
+                                  children: [
+                                    SvgPicture.asset(likeIcon,
+                                        height: 19, width: 19),
+                                    SvgPicture.asset(commentIcon,
+                                        height: 16, width: 16),
+                                    SvgPicture.asset(shareIcon,
+                                        height: 17, width: 17),
+                                    SvgPicture.asset(bookmarkIcon,
+                                        height: 17, width: 17),
+                                  ],
+                                ),
+                              ),
+                              const SizedBox(height: 20),
+
+                              //the white divider
+                              Divider(
+                                  thickness: 0.2, color: isDark ? tGrey : black)
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
