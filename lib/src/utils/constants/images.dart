@@ -1,3 +1,20 @@
+//onboard image
+const nadoDrive =
+    'https://pbs.twimg.com/media/GlIcTXSWgAAb0Rr?format=jpg&name=large';
+const camera =
+    'https://images.unsplash.com/photo-1488240339625-c4014e114224?q=80&w=2103&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+const train =
+    'https://pbs.twimg.com/media/GlIcTXTWQAAh8Rs?format=jpg&name=large';
+const onboard1Image =
+    'https://images.unsplash.com/photo-1496509218134-fad73128e572?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+const onboard2Image =
+    'https://images.unsplash.com/photo-1591033594798-33227a05780d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzB8fDNkJTIwbW9uZXl8ZW58MHwwfDB8fHww';
+const onboard3Image =
+    'https://images.unsplash.com/photo-1699871371880-056d4565a754?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTl8fGV1cGhvcmlhfGVufDB8MHwwfHx8MA%3D%3D';
+//auth images
+const regBanner =
+    'https://images.unsplash.com/photo-1545128485-c400e7702796?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDd8fHBhcnR5fGVufDB8MHwwfHx8MA%3D%3D';
+//
 const klyde =
     'https://images.unsplash.com/photo-1628107090690-82fc04d8c439?q=80&w=2104&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
 const love =
@@ -5,6 +22,12 @@ const love =
 const kiyoto = 'assets/images/kiyoto.jpg';
 const mountain =
     'https://images.unsplash.com/photo-1739993655680-4b7050ed2896?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDU4fGJvOGpRS1RhRTBZfHxlbnwwfHx8fHw%3D';
+const pool =
+    'https://images.unsplash.com/photo-1639231542682-85d4b35bee82?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+const maltese =
+    'https://images.unsplash.com/photo-1581365695782-7f692d6fcf35?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjUzfHxibGFjayUyMGFuZCUyMHdoaXRlfGVufDB8MHwwfHx8MA%3D%3D';
+const forest =
+    'https://images.unsplash.com/photo-1435685813800-51ba4ceb9c4a?q=80&w=1927&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
 const city =
     'https://images.unsplash.com/photo-1739382445469-c35d08ca4277?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDgyfGJvOGpRS1RhRTBZfHxlbnwwfHx8fHw%3D';
 const woods =

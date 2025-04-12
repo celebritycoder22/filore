@@ -5,6 +5,11 @@ const verifiedIcon = 'assets/icons/verified_icon.svg';
 const personIcon = 'assets/icons/person_rounded_icon.svg';
 const locationIcon = 'assets/icons/location_icon.svg';
 const giftIcon = 'assets/icons/gift_icon.svg';
+const photoIcon = 'assets/icons/photo_icon.svg';
+const collectionIcon = 'assets/icons/collection_icon.svg';
+const googleIcon = 'assets/icons/google_icon.svg';
+const xIcon = 'assets/icons/x_logo_black.svg';
+const appleIcon = 'assets/icons/apple_logo_black.svg';
 //navigation icons
 const homeIcon = 'assets/icons/home_icon.svg';
 const searchIcon = 'assets/icons/search_icon.svg';

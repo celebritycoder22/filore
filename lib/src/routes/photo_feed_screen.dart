@@ -2,6 +2,7 @@ import 'package:filore/src/core/providers/photo_provider.dart';
 import 'package:filore/src/core/providers/user_provider.dart';
 import 'package:filore/src/utils/constants/colors.dart';
 import 'package:filore/src/utils/constants/icons.dart';
+import 'package:filore/src/utils/helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
@@ -50,9 +51,8 @@ class PhotoFeedScreen extends ConsumerWidget {
                   child: ListView.builder(
                     padding: const EdgeInsets.only(bottom: 100),
                     itemCount: user.following
-                            .expand((follower) => follower.photos)
-                            .length ??
-                        0,
+                        .expand((follower) => follower.photos)
+                        .length,
                     itemBuilder: (context, index) {
                       final photo = user.following
                           .expand((followers) => followers.photos)
@@ -89,13 +89,75 @@ class PhotoFeedScreen extends ConsumerWidget {
                                   spacing: 2,
                                   children: [
                                     SvgPicture.asset(likeIcon,
-                                        height: 19, width: 19),
+                                        height: 20, width: 20),
+                                    //like count
+                                    Expanded(
+                                      child: Padding(
+                                        padding: const EdgeInsets.only(
+                                            top: 2.0, left: 1),
+                                        child: Text(
+                                            formatCount(photo.likeCount),
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .bodySmall
+                                                ?.copyWith(
+                                                  color:
+                                                      isDark ? prGrey : black,
+                                                )),
+                                      ),
+                                    ),
+                                    //comment icon
                                     SvgPicture.asset(commentIcon,
                                         height: 16, width: 16),
+                                    Expanded(
+                                      child: Padding(
+                                        padding: const EdgeInsets.only(
+                                            top: 2.0, left: 2),
+                                        child: Text(
+                                            formatCount(photo.commentCount),
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .bodySmall
+                                                ?.copyWith(
+                                                  color:
+                                                      isDark ? prGrey : black,
+                                                )),
+                                      ),
+                                    ),
+                                    //share photo icon
                                     SvgPicture.asset(shareIcon,
                                         height: 17, width: 17),
+                                    Expanded(
+                                      child: Padding(
+                                        padding: const EdgeInsets.only(
+                                            top: 2.0, left: 1),
+                                        child: Text(
+                                            formatCount(photo.shareCount),
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .bodySmall
+                                                ?.copyWith(
+                                                  color:
+                                                      isDark ? prGrey : black,
+                                                )),
+                                      ),
+                                    ),
                                     SvgPicture.asset(bookmarkIcon,
                                         height: 17, width: 17),
+                                    //bookmark count
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          top: 2.0, left: 2),
+                                      child: Text(
+                                        formatCount(photo.bookmarkCount),
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .bodySmall
+                                            ?.copyWith(
+                                              color: isDark ? prGrey : black,
+                                            ),
+                                      ),
+                                    ),
                                   ],
                                 ),
                               ),

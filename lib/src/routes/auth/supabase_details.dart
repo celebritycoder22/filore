@@ -1,0 +1,3 @@
+const supabaseUrl = 'https://dyrnlyfoltzhkwlgrrpc.supabase.co';
+const anonPublic =
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImR5cm5seWZvbHR6aGt3bGdycnBjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDM3OTk5OTUsImV4cCI6MjA1OTM3NTk5NX0.WVd2jou5SPDij1tuu73ibj4YPlxtp-2Vi3liaHgVk70';

@@ -3,20 +3,22 @@ class Photo {
   String photoUrl = 'photoUrl';
   String caption = 'image caption';
   DateTime? timePosted = DateTime.now();
-  int likeCount = 0;
-  int bookmarkCount = 0;
-  int commentCount = 0;
-  int shareCount = 0;
+  int? likeCount;
+  int? bookmarkCount;
+  int? commentCount;
+  int? shareCount;
+  List<String> hashtags = [];
   // UserModel owner;
 
   Photo({
     this.id = 'photo Id',
     required this.photoUrl,
     this.caption = '',
-    this.likeCount = 0,
-    this.bookmarkCount = 0,
-    this.commentCount = 0,
-    this.shareCount = 0,
+    this.likeCount,
+    this.bookmarkCount,
+    this.commentCount,
+    this.shareCount,
+    this.hashtags = const [],
     // required this.owner,
   }) : timePosted = DateTime.now();
 }
