@@ -1,3 +1,4 @@
+import 'package:filore/src/routes/auth/auth_gate.dart';
 import 'package:filore/src/routes/auth/sign_in_screen.dart';
 import 'package:filore/src/routes/auth/sign_up_screen.dart';
 import 'package:filore/src/routes/auth/supabase_details.dart';
@@ -44,6 +45,10 @@ GoRouter _route = GoRouter(
       builder: (context, builder) => OnboardingScreen(),
     ),
     //auth routes
+    GoRoute(
+      path: '/auth_gate',
+      builder: (context, builder) => AuthGate(),
+    ),
     GoRoute(
       path: '/signup',
       builder: (context, builder) => SignUpScreen(),
